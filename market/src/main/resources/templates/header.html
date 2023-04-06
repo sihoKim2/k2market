@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf/org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<div th:fragment = "header">
+
+  <header>
+    <img
+            class="header-img"
+            src="/image/headBackGround.png"
+            alt="Header Image"
+    />
+  </header>
+
+  <nav>
+    <ul class="menu-list">
+    <ul class="menu-list">
+      <li><a href="#">가구</a></li>
+      <li><a href="#">스포츠</a></li>
+      <li><a href="#">유아</a></li>
+      <li><a href="#">게임</a></li>
+      <li><a href="#">디지털</a></li>
+      <li><a href="#">티켓 / 쿠폰</a></li>
+      <li><a href="#">반려동물 용품</a></li>
+      <li><a href="#">무료 나눔</a></li>
+      <li><a href="#">자동차 용품</a></li>
+    </ul>
+  </nav>
+
+  <nav>
+    <div class="dropdown">
+      <a class="dropbtn">메뉴</a>
+      <div class="dropdown-content">
+        <li><a href="#">가구</a></li>
+        <li><a href="#">스포츠</a></li>
+        <li><a href="#">유아</a></li>
+        <li><a href="#">게임</a></li>
+        <li><a href="#">디지털</a></li>
+        <li><a href="#">티켓 / 쿠폰</a></li>
+        <li><a href="#">반려동물 용품</a></li>
+        <li><a href="#">무료 나눔</a></li>
+        <li><a href="#">자동차 용품</a></li>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <a href="/members/login" class="login-btn" sec:authorize="isAnonymous()">로그인</a>
+      <a class="login-btn" onclick="location.href='/members/new'" sec:authorize="isAnonymous()">  회원가입</a>
+      <a href="/members/mypage" class="signup-btn" sec:authorize="isAuthenticated()">마이페이지</a>
+      <a href="/members/logout" class="login-btn" sec:authorize="isAuthenticated()">로그아웃</a>
+    </div>
+  </nav>
+
+</div>
+</html>
